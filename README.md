@@ -1,1 +1,1 @@
-# Study-21-1-codingTest
+# Coin Study 21 1학기 codingTest
