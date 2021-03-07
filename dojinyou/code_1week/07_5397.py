@@ -1,24 +1,28 @@
 # https://www.acmicpc.net/problem/5397
 
 from sys import stdin
-input = stdin.readline
-PS = input()
-prev = "("
-pipes = 0
-frac = 0
-for c in PS[1:]:
-	if c == "(" :
-		if prev == "(" :
-			pipes += 1
-	elif c == ")":
-		if prev=="(" :
-			frac += pipes
-		elif prev==")":
-			pipes -= 1
-			frac += 1
-	prev = c
-	
-print(frac)
-
-
-
+# import queue
+for _ in range(int(stdin.readline())):
+  testCase = stdin.readline().strip()
+  output = []
+  # temp = queue.Queue()
+  temp = []
+  for char in testCase :
+    if char == "<":
+      if len(output) :
+        # temp.put(output.pop())
+        temp.append(output.pop())
+    elif char == ">":
+      # if temp.qsize() != 0 :
+      if len(temp) :
+        output.append(temp.pop())
+    elif char == "-":
+      if len(output):
+        output.pop()
+    else :
+      output.append(char)
+  # while temp.qsize() != 0 :
+  #   output.append(temp.get())
+  while len(temp) :
+    output.append(temp.pop())
+  print(''.join(output))
