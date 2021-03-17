@@ -1,3 +1,4 @@
+"""시간초과"""
 L = list(input())
 stack = []
 num=0
