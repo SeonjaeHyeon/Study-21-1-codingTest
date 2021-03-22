@@ -13,7 +13,7 @@ else :
 	gaps = [house[i+1]-house[i] for i in range(n-1)] # O(n)
 
 	s = min(gaps) # O(n)
-	e = house[-1]-house[0] # O(n)
+	e = house[-1]-house[0] # O(1)
 
 	def getCount(g, gaps):
 		count = 0
